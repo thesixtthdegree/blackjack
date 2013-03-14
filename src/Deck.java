@@ -4,16 +4,17 @@ import java.util.Random;
 
 public class Deck {
 	//instance variables
-	ArrayList<Integer> cardList = new ArrayList<Integer>(52);
+	ArrayList<Card> cardList = new ArrayList<Card>(52);
 	int position;
 	Random rand = new Random();
 	
 	
 	//Constructor
 	public Deck(){
-		//Fill deck with numbers 1-52 in order
+		//Fill deck with cards from 0-51
 		for(int i = 0; i<52; i++){
-			cardList.add(i, i+1);
+			Card card = new Card(i);
+			cardList.add(i, card);
 		}
 		shuffle();
 		position = 0;
@@ -21,7 +22,7 @@ public class Deck {
 	
 	
 	//Get
-	public ArrayList<Integer> getCardList(){
+	public ArrayList<Card> getCardList(){
 		return cardList;
 	}
 	
@@ -35,7 +36,7 @@ public class Deck {
 	//Shuffle deck using Fisher-Yates shuffle algorithm
 	public void shuffle(){
 		int j;
-		int temp;
+		Card temp;
 		for(int i = 51; i>=0; i--){
 			temp = cardList.get(i);
 			
@@ -53,8 +54,8 @@ public class Deck {
 	
 	
 	//Pick up cards from the deck
-	public ArrayList<Integer> pick(int n){
-		ArrayList<Integer> cardsToPick = new ArrayList<Integer>(n);
+	public ArrayList<Card> pick(int n){
+		ArrayList<Card> cardsToPick = new ArrayList<Card>(n);
 		for(int i = 0; i<n; i++){
 			cardsToPick.add(i, cardList.get(position));
 			position++;
