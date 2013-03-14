@@ -1,5 +1,5 @@
 ##A CSCI1101 Project##
-<<<<<<< HEAD
+
 ###Blackjack Game Rules###
 1. The goal of blackjack is to beat the dealer's hand without going over 21.  
 2. Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.  
@@ -19,5 +19,4 @@
 14. You can double on a hand resulting from a split, tripling or quadrupling you bet.  
 =======
 
-Edit - Ario
->>>>>>> Test edit.
+Test -Ario
