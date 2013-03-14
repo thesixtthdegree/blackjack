@@ -109,5 +109,90 @@ public class Card
 	{
 		return face+" of "+suit+" Value:"+ value;
 	}
+	
+	//draws a text representation of a card
+	public void drawCard()
+	{
+		if(suit == "Hearts")
+		{
+			System.out.println(" ---------------------");
+			System.out.println("|                     |");
+			System.out.println("|  /\\/\\               |");
+			System.out.println("|  \\  /          "+face+"    |");
+			System.out.println("|   \\/                |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|         /\\/\\        |");
+			System.out.println("|         \\  /        |");
+			System.out.println("|          \\/         |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|               /\\/\\  |");
+			System.out.println("|    "+face+"          \\  /  |");
+			System.out.println("|                \\/   |");
+			System.out.println("|                     |");
+			System.out.println(" ---------------------");
+		}
+		else if(suit == "Spades")
+		{
+			System.out.println(" ---------------------");
+			System.out.println("|                     |");
+			System.out.println("|    ^                |");
+			System.out.println("|   /_\\           "+face+"   |");
+			System.out.println("|    |                |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|           ^         |");
+			System.out.println("|          /_\\        |");
+			System.out.println("|           |         |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|                 ^   |");
+			System.out.println("|    "+face+"           /_\\  |");
+			System.out.println("|                 |   |");
+			System.out.println("|                     |");
+			System.out.println(" ---------------------");
+		}
+		else if(suit == "Diamonds")
+		{
+			System.out.println(" ---------------------");
+			System.out.println("|                     |");
+			System.out.println("|    /\\               |");
+			System.out.println("|    \\/           "+face+"   |");
+			System.out.println("|                     |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|          /\\         |");
+			System.out.println("|          \\/         |");
+			System.out.println("|                     |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|                /\\   |");
+			System.out.println("|    "+face+"           \\/   |");
+			System.out.println("|                     |");
+			System.out.println("|                     |");
+			System.out.println(" ---------------------");
+		}
+		else if(suit == "Clubs")
+		{
+			System.out.println(" ---------------------");
+			System.out.println("|                     |");
+			System.out.println("|    O                |");
+			System.out.println("|   O_O           "+face+"   |");
+			System.out.println("|    |                |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|           O         |");
+			System.out.println("|          O_O        |");
+			System.out.println("|           |         |");
+			for(int i = 0; i < 2; i++)
+				System.out.println("|                     |");
+			System.out.println("|                 O   |");
+			System.out.println("|    "+face+"           O_O  |");
+			System.out.println("|                 |   |");
+			System.out.println("|                     |");
+			System.out.println(" ---------------------");
+		}
+	}
  
 }

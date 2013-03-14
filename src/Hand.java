@@ -38,4 +38,20 @@ public class Hand {
 		return sum;
 	}
 	
+	//Draws the hand
+	public void drawHand(){
+		//for each row
+		for(int i = 0; i<17; i++){ //cardList.get(0).drawCard().size()
+			
+			//for each card
+			for(int j = 0; j<cardList.size(); j++){
+				System.out.print(cardList.get(j).drawCardLine(i));
+			}
+			
+			//New line
+			System.out.println("\n");
+			
+		}
+	}
+	
 }
