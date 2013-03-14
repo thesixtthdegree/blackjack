@@ -17,6 +17,6 @@
 12. You can only double/split on the first move, or first move of a hand created by a split.  
 13. You cannot play on two aces after they are split.  
 14. You can double on a hand resulting from a split, tripling or quadrupling you bet.  
-=======
+
 
 Test -Ario
