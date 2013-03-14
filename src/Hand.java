@@ -28,4 +28,14 @@ public class Hand {
 		
 	}
 	
+	//Return the value of the hand
+	public int getValue(){
+		int sum = 0;
+		for(int i=0; i<cardList.size(); i++){
+			sum += cardList.get(i).getValue();
+		}
+		
+		return sum;
+	}
+	
 }
