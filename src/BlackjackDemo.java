@@ -16,7 +16,7 @@ public class BlackjackDemo {
 		System.out.println(hand1.getCardList());
 		System.out.println(deck1.getPosition());
 		System.out.println(hand1.getValue());
-		hand1.getCardList().get(1).drawCard();
+		hand1.drawHand();
 	}
 
 }

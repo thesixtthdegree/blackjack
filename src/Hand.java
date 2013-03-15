@@ -49,7 +49,7 @@ public class Hand {
 			}
 			
 			//New line
-			System.out.println("\n");
+			System.out.print("\n");
 			
 		}
 	}
