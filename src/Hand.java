@@ -3,11 +3,12 @@ import java.util.ArrayList;
 
 public class Hand {
 	//instance variables
-	ArrayList<Card> cardList = new ArrayList<Card>(5);
+	ArrayList<Card> cardList;
 	
 	//Constructor
 	public Hand(){
-		
+		int startSize = 5;
+		cardList = new ArrayList<Card>(startSize);
 	}
 	
 	//Methods
