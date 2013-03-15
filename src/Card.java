@@ -1,13 +1,17 @@
+import java.util.ArrayList;
+
 public class Card 
 {
   
 	private String suit;
 	private int value;
 	private String face;
+	private ArrayList<String> lines = null;
 	
 	public Card(int n)
 	{
 		makeCard(n);
+		createLines();
 	}
 	
 	//set methods
@@ -110,89 +114,121 @@ public class Card
 		return face+" of "+suit+" Value:"+ value;
 	}
 	
-	//draws a text representation of a card
-	public void drawCard()
+	//draws a text representation of a card by adding each line to an array
+	public void createLines()
 	{
+		ArrayList<String> result = new ArrayList<String>();
 		if(suit == "Hearts")
 		{
-			System.out.println(" ---------------------");
-			System.out.println("|                     |");
-			System.out.println("|  /\\/\\               |");
-			System.out.println("|  \\  /          "+face+"    |");
-			System.out.println("|   \\/                |");
+			result.add(" --------------------- ");
+			result.add("|                     |");
+			result.add("|  /\\/\\               |");
+			if(!face.equals("10"))
+				result.add("|  \\  /          "+face+"    |");
+			else
+				result.add("|  \\  /          "+face+"   |");
+			result.add("|   \\/                |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|         /\\/\\        |");
-			System.out.println("|         \\  /        |");
-			System.out.println("|          \\/         |");
+				result.add("|                     |");
+			result.add("|         /\\/\\        |");
+			result.add("|         \\  /        |");
+			result.add("|          \\/         |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|               /\\/\\  |");
-			System.out.println("|    "+face+"          \\  /  |");
-			System.out.println("|                \\/   |");
-			System.out.println("|                     |");
-			System.out.println(" ---------------------");
+				result.add("|                     |");
+			result.add("|               /\\/\\  |");
+			if(!face.equals("10"))
+				result.add("|    "+face+"          \\  /  |");
+			else
+				result.add("|    "+face+"         \\  /  |");
+			result.add("|                \\/   |");
+			result.add("|                     |");
+			result.add(" --------------------- ");
 		}
 		else if(suit == "Spades")
 		{
-			System.out.println(" ---------------------");
-			System.out.println("|                     |");
-			System.out.println("|    ^                |");
-			System.out.println("|   /_\\           "+face+"   |");
-			System.out.println("|    |                |");
+			result.add(" --------------------- ");
+			result.add("|                     |");
+			result.add("|    ^                |");
+			if(!face.equals("10"))
+				result.add("|   /_\\           "+face+"   |");
+			else
+				result.add("|   /_\\           "+face+"  |");
+			result.add("|    |                |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|           ^         |");
-			System.out.println("|          /_\\        |");
-			System.out.println("|           |         |");
+				result.add("|                     |");
+			result.add("|           ^         |");
+			result.add("|          /_\\        |");
+			result.add("|           |         |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|                 ^   |");
-			System.out.println("|    "+face+"           /_\\  |");
-			System.out.println("|                 |   |");
-			System.out.println("|                     |");
-			System.out.println(" ---------------------");
+				result.add("|                     |");
+			result.add("|                 ^   |");
+			if(!face.equals("10"))
+				result.add("|    "+face+"           /_\\  |");
+			else
+				result.add("|    "+face+"          /_\\  |");
+			result.add("|                 |   |");
+			result.add("|                     |");
+			result.add(" --------------------- ");
 		}
 		else if(suit == "Diamonds")
 		{
-			System.out.println(" ---------------------");
-			System.out.println("|                     |");
-			System.out.println("|    /\\               |");
-			System.out.println("|    \\/           "+face+"   |");
-			System.out.println("|                     |");
+			result.add(" --------------------- ");
+			result.add("|                     |");
+			result.add("|    /\\               |");
+			if(!face.equals("10"))
+				result.add("|    \\/           "+face+"   |");
+			else
+				result.add("|    \\/           "+face+"  |");
+			result.add("|                     |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|          /\\         |");
-			System.out.println("|          \\/         |");
-			System.out.println("|                     |");
+				result.add("|                     |");
+			result.add("|          /\\         |");
+			result.add("|          \\/         |");
+			result.add("|                     |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|                /\\   |");
-			System.out.println("|    "+face+"           \\/   |");
-			System.out.println("|                     |");
-			System.out.println("|                     |");
-			System.out.println(" ---------------------");
+				result.add("|                     |");
+			result.add("|                /\\   |");
+			if(!face.equals("10"))
+				result.add("|    "+face+"           \\/   |");
+			else
+				result.add("|    "+face+"          \\/   |");
+			result.add("|                     |");
+			result.add("|                     |");
+			result.add(" --------------------- ");
 		}
 		else if(suit == "Clubs")
 		{
-			System.out.println(" ---------------------");
-			System.out.println("|                     |");
-			System.out.println("|    O                |");
-			System.out.println("|   O_O           "+face+"   |");
-			System.out.println("|    |                |");
+			result.add(" --------------------- ");
+			result.add("|                     |");
+			result.add("|    O                |");
+			if(!face.equals("10"))
+				result.add("|   O_O           "+face+"   |");
+			else
+				result.add("|   O_O           "+face+"  |");
+			result.add("|    |                |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|           O         |");
-			System.out.println("|          O_O        |");
-			System.out.println("|           |         |");
+				result.add("|                     |");
+			result.add("|           O         |");
+			result.add("|          O_O        |");
+			result.add("|           |         |");
 			for(int i = 0; i < 2; i++)
-				System.out.println("|                     |");
-			System.out.println("|                 O   |");
-			System.out.println("|    "+face+"           O_O  |");
-			System.out.println("|                 |   |");
-			System.out.println("|                     |");
-			System.out.println(" ---------------------");
+				result.add("|                     |");
+			result.add("|                 O   |");
+			if(!face.equals("10"))
+				result.add("|    "+face+"           O_O  |");
+			else
+				result.add("|    "+face+"          O_O  |");
+			result.add("|                 |   |");
+			result.add("|                     |");
+			result.add(" --------------------- ");
 		}
+		lines = result;
+	}
+	
+	//calls each line of the card image by line number
+	public String drawCardLine(int n)
+	{
+		return lines.get(n);
 	}
  
 }
