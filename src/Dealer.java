@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 
-
 public class Dealer extends Player
 {
 	private Hand hand; //the dealers hand
@@ -16,21 +15,20 @@ public class Dealer extends Player
 	}
 	
 
-	
-	//sets the number of cards to deal
-	public ArrayList<Card> deal(int n)
-	{
-		return deck.pick(n);
-		
-	}
-	//deal cards to the player based on number of cards to deal
-	public void deal(int n, Player player)
+	//deal one card to the player
+	public void dealToPlayer(Player player)
 	{
 		Hand playerHand = player.getHand();
-		playerHand.addToHand(deck.pick(n));
+		playerHand.addToHand(deck.pick());
 		player.setHand(playerHand);
 	}
 	
+	
+	//deal one card to it self (dealer)
+	public void dealToDealer()
+	{
+		hand.addToHand(deck.pick());
+	}
 		
 	
 	
