@@ -52,7 +52,14 @@ public class Deck {
 		
 	}
 	
-	
+	//Pick up one card from the deck
+		public ArrayList<Card> pick(){
+			ArrayList<Card> cardsToPick = new ArrayList<Card>(1);
+			cardsToPick.add(cardList.get(position));
+			position++;	
+			return cardsToPick;
+		}
+		
 	//Pick up cards from the deck
 	public ArrayList<Card> pick(int n){
 		ArrayList<Card> cardsToPick = new ArrayList<Card>(n);
