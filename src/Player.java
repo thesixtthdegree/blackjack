@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Player{
-  
+	
 	//instance variables
 	private String name;
 	private int money;
@@ -20,11 +20,11 @@ public class Player{
 	public Player(String n, int m){
 		name = n;
 		money = m;
-		hand = new Hand(){
+		hand = new Hand();
 	}
 	
 	//get & set methods
-	public String getName()[
+	public String getName(){
 		return name;
 	}
 	
@@ -45,26 +45,26 @@ public class Player{
 	}
 	
 	//bet method
-	public void bet(int amount){
+	public void bet(int amount, Dealer dealer){
 		money -= amount;
-		dealer.acceptBetFrom(player, amount);
+		dealer.acceptBetFrom(amount);
 	}
 	
 	//deal method
-	public void deal(){
+	public void deal(Deck deck){
 		ArrayList<Card> cardList = deck.pick(2);
-		hand.setHand(cardList);
+		hand.setCardList(cardList);
 	}
 	
 	//hit method
-	public void hit(){
-		dealer.dealToPlayer(player);
+	public void hit(Dealer dealer){
+		dealer.dealToPlayer(this);
 	}
 	
 	//double method
-	public void double(){
+	public void doubleBet(Dealer dealer){
 		bet(dealer.getPot() / 2);
-		hit();
+		hit(dealer);
 	}
 	
 	//get player's hand value
@@ -78,6 +78,3 @@ public class Player{
 	}*/
 	
 }
-		
-		
-		
