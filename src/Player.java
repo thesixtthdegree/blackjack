@@ -44,10 +44,14 @@ public class Player{
 		money = m;
 	}
 	
-	//bet method
-	public void bet(int amount, Dealer dealer){
-		money -= amount;
-		dealer.acceptBetFrom(amount);
+	//remove money
+	public void removeAmount(int amount){
+		money -= amount;		
+	}
+	
+	//add money
+	public void addAmount(int amount){
+		money += amount;
 	}
 	
 	//deal method
@@ -61,20 +65,18 @@ public class Player{
 		dealer.dealToPlayer(this);
 	}
 	
-	//double method
-	public void doubleBet(Dealer dealer){
-		bet(dealer.getPot() / 2);
-		hit(dealer);
-	}
-	
 	//get player's hand value
 	public int getHandValue(){
-		hand.getValue();
+		return hand.getValue();
 	}
 	
-	/*surrender method(Possible)
-	public void surrender(){
-		
-	}*/
+	//blackjack?
+	public boolean isBlackJack(){
+		return(this.getHandValue() == 21);
+	}
 	
+	//bust?
+	public boolean isBust(){
+		return(this.getHandValue() > 21);
+	}
 }
